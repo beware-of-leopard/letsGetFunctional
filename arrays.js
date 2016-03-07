@@ -27,8 +27,6 @@ var highestNum = numbers.reduce(function(high, current){
 	return high;
 });
 
-console.log(highestNum);
-
 
 
 // ---------------------------
@@ -41,9 +39,6 @@ var longestWord = strings.reduce(function(currentLong, currentWord){
 	return currentLong;
 });
 
-console.log(longestWord);
-
-
 
 // ---------------------------
 // 3. Find even numbers
@@ -53,7 +48,6 @@ function findEvenNumbers(arrayOfNums){
 	var evenNums = arrayOfNums.filter(function(num){
 		return num%2 === 0;
 	});
-	console.log(evenNums);
 }
 
 findEvenNumbers(numbers);
@@ -66,7 +60,6 @@ function findOddNumbers(arrayOfNums){
 	var oddNums = arrayOfNums.filter(function(num){
 		return num%2 !== 0;
 	});
-	console.log(oddNums);
 }
 
 findOddNumbers(numbers);
@@ -80,7 +73,6 @@ function stringWithinString(arrayOfStrings){
 	var filteredStrings = arrayOfStrings.filter(function(string){
 			return string.includes('is');
 	});
-	console.log(filteredStrings);
 }
 
 stringWithinString(strings);
@@ -95,7 +87,6 @@ function joinTwoArrays(a, b){
 			return growingArray;
 		}, b)
 
-	console.log(joinedArray);
 }
 
 joinTwoArrays(strings, numbers);
@@ -107,11 +98,15 @@ joinTwoArrays(strings, numbers);
 // ---------------------------
 
 
-
-var jsInstructors = instructors.filter(function(instructor){
+function alphaInstructors (arr){
+var jsInstructors = arr.filter(function(instructor){
 	return instructor['teaches'] === 'JavaScript';
 	}).map(function(instructor){
 		return instructor.firstname;
 	})
 
-console.log(jsInstructors.sort());
+return jsInstructors.sort();
+
+};
+
+alphaInstructors(instructors);
